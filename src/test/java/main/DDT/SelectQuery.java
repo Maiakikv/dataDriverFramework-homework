@@ -44,12 +44,7 @@ public class SelectQuery {
         return data;
     }
 
-//    @Test(dataProvider = "DB")
-//    public void fillForm(String id, String firstName, String lastName, String mobileNumber) {
-//        open("https://demoqa.com/automation-practice-form");
-//        $("#firstName").sendKeys(firstName);
-//        $("#lastName").sendKeys(lastName);
-//        $("[placeholder='Mobile Number']").sendKeys(mobileNumber);
+
 
     }
 
