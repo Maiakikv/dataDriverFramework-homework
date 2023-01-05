@@ -1,7 +1,6 @@
 package test;
 
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import main.DDT.SelectQuery;
 import org.openqa.selenium.By;
@@ -22,23 +21,23 @@ public class FillForm {
     WebDriver driver;
 
     @BeforeTest
-    public void setUp (){
-            WebDriverManager.chromedriver().setup();
-            this.driver = new ChromeDriver();
-            this.driver.manage().window().maximize();
-            this.driver.manage().timeouts().implicitlyWait(5L, TimeUnit.SECONDS);
-        }
+    public void setUp() {
+        WebDriverManager.chromedriver().setup();
+        this.driver = new ChromeDriver();
+        this.driver.manage().window().maximize();
+        this.driver.manage().timeouts().implicitlyWait(5L, TimeUnit.SECONDS);
+    }
 
 
     @Test(dataProvider = "DB", dataProviderClass = SelectQuery.class)
-    public void fillForm(String id, String firstName, String lastName, String mobileNumber){
-            driver.get("https://demoqa.com/automation-practice-form");
-         WebElement name= driver.findElement(By.id("firstName"));
-         name.sendKeys(firstName);
-         WebElement lastN = driver.findElement(By.id("lastName"));
-         lastN.sendKeys(lastName);
-         WebElement mobile = driver.findElement(By.xpath("//input[@id = 'userNumber']"));
-         mobile.sendKeys(mobileNumber);
+    public void fillForm(String id, String firstName, String lastName, String mobileNumber) {
+        driver.get("https://demoqa.com/automation-practice-form");
+        WebElement name = driver.findElement(By.id("firstName"));
+        name.sendKeys(firstName);
+        WebElement lastN = driver.findElement(By.id("lastName"));
+        lastN.sendKeys(lastName);
+        WebElement mobile = driver.findElement(By.xpath("//input[@id = 'userNumber']"));
+        mobile.sendKeys(mobileNumber);
 
 
 //  საბმითზე არ ეწერა დავალებაში და დავტოვე ასე
@@ -52,7 +51,12 @@ public class FillForm {
 //        js.executeScript("arguments[0].click();", submit);
 
 
-        }
+    }
+
+    @AfterTest
+    public void tearDown() {
+        driver.quit();
+    }
 
 
 }
