@@ -43,7 +43,7 @@ public class FillForm {
 
 //  საბმითზე არ ეწერა დავალებაში და დავტოვე ასე
 
-//        SelenideElement submit = $(By.id("submit"));
+//        WevElement submit = driver.findElement(By.id("submit"));
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        WebElement ad = driver.findElement(By.id("adplus-anchor"));
 //        js.executeScript("return arguments[0].remove(); ", ad);
